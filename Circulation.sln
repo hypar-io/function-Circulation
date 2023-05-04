@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circulation", "src\Circulation.csproj", "{482BC393-0AAF-49D9-B0E0-4C1CB27166FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circulation.Dependencies", "dependencies\Circulation.Dependencies.csproj", "{7D262CCC-137A-4D44-93E0-BBCF73E72DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Circulation.Tests", "test\Circulation.Tests.csproj", "{970834FA-41C2-4E0D-BBED-A10CFDD363AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{482BC393-0AAF-49D9-B0E0-4C1CB27166FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{482BC393-0AAF-49D9-B0E0-4C1CB27166FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{482BC393-0AAF-49D9-B0E0-4C1CB27166FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{482BC393-0AAF-49D9-B0E0-4C1CB27166FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D262CCC-137A-4D44-93E0-BBCF73E72DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D262CCC-137A-4D44-93E0-BBCF73E72DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D262CCC-137A-4D44-93E0-BBCF73E72DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D262CCC-137A-4D44-93E0-BBCF73E72DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{970834FA-41C2-4E0D-BBED-A10CFDD363AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{970834FA-41C2-4E0D-BBED-A10CFDD363AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{970834FA-41C2-4E0D-BBED-A10CFDD363AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{970834FA-41C2-4E0D-BBED-A10CFDD363AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,123 @@
+{
+  "$schema": "https://hypar.io/Schemas/Function.json",
+  "id": "ebe84081-d130-4105-aefe-fd9d7401dc60",
+  "name": "Circulation",
+  "description": "Generate Building Circulation by drawing corridors",
+  "language": "C#",
+  "model_output": "Circulation",
+  "model_dependencies": [
+    {
+      "autohide": true,
+      "name": "Levels",
+      "optional": false
+    },
+    {
+      "name": "Conceptual Mass",
+      "optional": true
+    },
+    {
+      "autohide": false,
+      "name": "Core",
+      "optional": true
+    },
+    {
+      "autohide": false,
+      "name": "Floors",
+      "optional": true
+    },
+    {
+      "name": "Vertical Circulation",
+      "optional": true
+    }
+  ],
+  "overrides": {
+    "Circulation": {
+      "perParent": "Level",
+      "context": "[*discriminator=Elements.CirculationSegment]",
+      "identity": {
+        "Add Id": {
+          "type": "string"
+        }
+      },
+      "behaviors": {
+        "add": {
+          "schema": {
+            "Geometry": {
+              "$ref": "https://prod-api.hypar.io/schemas/ThickenedPolyline.json",
+              "$hyparAllowIntersection": true,
+              "$hyparConstrainToGround": true,
+              "$hyparRelativeToTransform": true,
+              "$hypar3dDrawing": false,
+              "default": {
+                "rightWidth": 1.5
+              }
+            },
+            "Level": {
+              "$hyparRelation": {
+                "$ref": "https://prod-api.hypar.io/schemas/LevelVolume"
+              },
+              "type": "object",
+              "properties": {
+                "Name": {
+                  "type": "string"
+                },
+                "Building Name": {
+                  "type": "string"
+                },
+                "Add Id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "remove": true,
+        "revert": false
+      },
+      "schema": {
+        "Geometry": {
+          "$ref": "https://prod-api.hypar.io/schemas/ThickenedPolyline.json",
+          "$hyparAllowIntersection": true,
+          "$hyparConstrainToGround": true,
+          "$hyparRelativeToTransform": true,
+          "$hypar3dDrawing": false,
+          "default": {
+            "rightWidth": 1.5
+          }
+        },
+        "Level": {
+          "$hyparRelation": {
+            "$ref": "https://prod-api.hypar.io/schemas/LevelVolume"
+          },
+          "type": "object",
+          "properties": {
+            "Name": {
+              "type": "string"
+            },
+            "Building Name": {
+              "type": "string"
+            },
+            "Add Id": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "element_types": [
+    "https://schemas.hypar.io/LevelVolume.json",
+    "https://schemas.hypar.io/CirculationSegment.json",
+    "https://schemas.hypar.io/ServiceCore.json",
+    "https://schemas.hypar.io/LevelElements.json"
+  ],
+  "repository_url": "https://github.com/hypar-io/function",
+  "last_updated": "0001-01-01T00:00:00",
+  "cli_version": "1.5.0-alpha.6"
+}
