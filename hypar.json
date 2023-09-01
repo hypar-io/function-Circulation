@@ -43,7 +43,7 @@
         "add": {
           "schema": {
             "Geometry": {
-              "$ref": "https://prod-api.hypar.io/schemas/ThickenedPolyline.json",
+              "$ref": "https://schemas.hypar.io/ThickenedPolyline.json.json",
               "$hyparAllowIntersection": true,
               "$hyparConstrainToGround": true,
               "$hyparRelativeToTransform": true,
@@ -54,7 +54,7 @@
             },
             "Level": {
               "$hyparRelation": {
-                "$ref": "https://prod-api.hypar.io/schemas/LevelVolume"
+                "$ref": "https://schemas.hypar.io/LevelVolume.json"
               },
               "type": "object",
               "properties": {
@@ -79,7 +79,7 @@
       },
       "schema": {
         "Geometry": {
-          "$ref": "https://prod-api.hypar.io/schemas/ThickenedPolyline.json",
+          "$ref": "https://schemas.hypar.io/ThickenedPolyline.json.json",
           "$hyparAllowIntersection": true,
           "$hyparConstrainToGround": true,
           "$hyparRelativeToTransform": true,
@@ -90,7 +90,7 @@
         },
         "Level": {
           "$hyparRelation": {
-            "$ref": "https://prod-api.hypar.io/schemas/LevelVolume"
+            "$ref": "https://schemas.hypar.io/LevelVolume.json"
           },
           "type": "object",
           "properties": {
