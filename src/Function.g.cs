@@ -61,11 +61,11 @@ namespace Circulation
             Console.WriteLine($"Time to load assemblies: {sw.Elapsed.TotalSeconds})");
 
             if(this.store == null)
-            {
+            { 
                 this.store = new S3ModelStore<CirculationInputs>(RegionEndpoint.GetBySystemName("us-west-1"));
             }
 
-            var l = new InvocationWrapper<CirculationInputs,CirculationOutputs>(store, Circulation.Execute);
+            var l = new InvocationWrapper<CirculationInputs,CirculationOutputs> (store, Circulation.Execute);
             var output = await l.InvokeAsync(args);
             return output;
         }

@@ -43,7 +43,7 @@
         "add": {
           "schema": {
             "Geometry": {
-              "$ref": "https://schemas.hypar.io/ThickenedPolyline.json.json",
+              "$ref": "https://schemas.hypar.io/ThickenedPolyline.json",
               "$hyparAllowIntersection": true,
               "$hyparConstrainToGround": true,
               "$hyparRelativeToTransform": true,
@@ -79,7 +79,7 @@
       },
       "schema": {
         "Geometry": {
-          "$ref": "https://schemas.hypar.io/ThickenedPolyline.json.json",
+          "$ref": "https://schemas.hypar.io/ThickenedPolyline.json",
           "$hyparAllowIntersection": true,
           "$hyparConstrainToGround": true,
           "$hyparRelativeToTransform": true,
