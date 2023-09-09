@@ -107,7 +107,7 @@ namespace Circulation
             {
                 var thickenedPolylinesForLevel = thickenedPolylines.Where(pl => pl.LevelVolume == lvl).ToList();
                 var geometry = thickenedPolylinesForLevel.Select(g => g.Geometry).ToList();
-                var offsetGeometry = IThickenedPolyline.GetPolygons(geometry);
+                var offsetGeometry = ThickenedPolyline.GetPolygons(geometry);
                 if (geometry.Count != offsetGeometry.Count)
                 {
                     output.Warnings.Add("Something strange happened with offset geometry. Try undoing your change and trying again.");
