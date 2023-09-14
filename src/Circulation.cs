@@ -107,7 +107,7 @@ namespace Circulation
             {
                 var thickenedPolylinesForLevel = thickenedPolylines.Where(pl => pl.LevelVolume == lvl).ToList();
                 var geometry = thickenedPolylinesForLevel.Select(g => g.Geometry).ToList();
-                var offsetGeometry = IThickenedPolyline.GetPolygons(geometry);
+                var offsetGeometry = ThickenedPolyline.GetPolygons(geometry);
                 if (geometry.Count != offsetGeometry.Count)
                 {
                     output.Warnings.Add("Something strange happened with offset geometry. Try undoing your change and trying again.");
@@ -148,7 +148,9 @@ namespace Circulation
         {
             if (floorsModel != null)
             {
-                var floorAtLevel = floorsModel.AllElementsOfType<Floor>().FirstOrDefault(f => Math.Abs(lvl.Transform.Origin.Z - f.Transform.Origin.Z) < (f.Thickness * 1.1));
+                var floorAtLevel = floorsModel.AllElementsOfType<Floor>().FirstOrDefault(f => f.AdditionalProperties["Creation Id"].ToString() == lvl.AddId) ??
+                floorsModel.AllElementsOfType<Floor>().FirstOrDefault(f => Math.Abs(lvl.Transform.Origin.Z - f.Transform.Origin.Z) < (f.Thickness * 1.1));
+
                 if (floorAtLevel != null)
                 {
                     lvl.Height -= floorAtLevel.Thickness;
