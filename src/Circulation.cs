@@ -148,7 +148,9 @@ namespace Circulation
         {
             if (floorsModel != null)
             {
-                var floorAtLevel = floorsModel.AllElementsOfType<Floor>().FirstOrDefault(f => Math.Abs(lvl.Transform.Origin.Z - f.Transform.Origin.Z) < (f.Thickness * 1.1));
+                var floorAtLevel = floorsModel.AllElementsOfType<Floor>().FirstOrDefault(f => f.AdditionalProperties["Creation Id"].ToString() == lvl.AddId) ??
+                floorsModel.AllElementsOfType<Floor>().FirstOrDefault(f => Math.Abs(lvl.Transform.Origin.Z - f.Transform.Origin.Z) < (f.Thickness * 1.1));
+
                 if (floorAtLevel != null)
                 {
                     lvl.Height -= floorAtLevel.Thickness;
