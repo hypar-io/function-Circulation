@@ -20,6 +20,14 @@ namespace Circulation
             var output = new CirculationOutputs();
             var levelsModel = inputModels["Levels"];
             var levelVolumes = levelsModel.AllElementsOfType<LevelVolume>().ToList() ?? new List<LevelVolume>();
+
+            // Get Floors
+            inputModels.TryGetValue("Floors", out var floorsModel);
+            if (floorsModel != null)
+            {
+                levelVolumes.AddRange(floorsModel.AllElementsOfType<LevelVolume>().ToList() ?? new List<LevelVolume>());
+            }
+
             if (inputModels.TryGetValue("Conceptual Mass", out var massModel))
             {
                 levelVolumes.AddRange(massModel.AllElementsOfType<LevelVolume>());
@@ -31,8 +39,6 @@ namespace Circulation
                 return output;
             }
 
-            // Get Floors
-            inputModels.TryGetValue("Floors", out var floorsModel);
 
             // Get Cores
             var hasCore = inputModels.TryGetValue("Core", out var coresModel);
@@ -163,6 +169,5 @@ namespace Circulation
                 }
             }
         }
-
     }
 }
