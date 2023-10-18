@@ -71,6 +71,7 @@ namespace Circulation
                     this.store = new UrlModelStore<CirculationInputs>();
                 }
             }
+            
 
             var l = new InvocationWrapper<CirculationInputs,CirculationOutputs> (store, Circulation.Execute);
             var output = await l.InvokeAsync(args);
